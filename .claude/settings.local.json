@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Read(//Users/keith/Project Files/ClaudeCode/**)",
+      "Bash(npx create-next-app@latest keithdow-site --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Bash(cp -r \"/Users/keith/Project Files/ClaudeCode/keithdow-site/.\" \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/\")",
+      "Bash(rm -rf \"/Users/keith/Project Files/ClaudeCode/keithdow-site\")",
+      "Bash(npm run *)",
+      "Bash(rm -rf node_modules .next)",
+      "Bash(npm install *)",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:keithdow.com)",
+      "WebFetch(domain:www.imagesofgod.ca)",
+      "Bash(mkdir -p \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images\")",
+      "Bash(curl -sL \"https://keithdow.com/wp-content/uploads/2025/07/Formed-Together.png\" -o \"formed-together-cover.png\")",
+      "Bash(curl -sL \"https://keithdow.com/wp-content/uploads/2025/07/9781666772302.jpeg\" -o \"betrayal-of-witness-cover.jpeg\")",
+      "Bash(curl -sL \"https://keithdow.com/wp-content/uploads/2025/07/through-the-lens-of-disability-e1745955117296-300x153.png\" -o \"images-of-god-project.png\")",
+      "Bash(curl -sL \"https://keithdow.com/wp-content/uploads/2025/07/DisabilityandtheCanadianChurchPodcastCover3-300x300.webp\" -o \"disability-canadian-church-podcast.webp\")",
+      "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/07/Art-Collage-1024x1024.png\" -o \"iog-art-collage.png\")",
+      "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/04/6Daniela.png\" -o \"iog-participant-daniela.png\")",
+      "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/07/P1000030-1-edited.jpg\" -o \"iog-event-1.jpg\")",
+      "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/07/P1000063-edited-1.jpg\" -o \"iog-event-2.jpg\")",
+      "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/07/Collage-Example-1024x768.jpg\" -o \"iog-collage-example.jpg\")"
+    ]
+  }
+}

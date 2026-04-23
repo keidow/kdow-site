@@ -1,65 +1,181 @@
-import Image from "next/image";
+import Link from "next/link";
+import Card from "@/components/Card";
+
+const areas = [
+  {
+    label: "Writing & Work",
+    title: "Scholarship & Publications",
+    description:
+      "Peer-reviewed articles, book chapters, podcast hosting, and public writing at the intersection of theology, disability, and the ethics of care.",
+    href: "/writing-and-work",
+  },
+  {
+    label: "Book",
+    title: "Formed Together",
+    description:
+      "Mystery, Narrative, and Virtue in Christian Caregiving — published by Baylor University Press. A vision of Christian caregiving as mutual transformation, not mere service.",
+    href: "/formed-together",
+  },
+  {
+    label: "About",
+    title: "Keith Dow",
+    description:
+      "Canadian theologian, researcher, and writer exploring the beauty and complexity of human limits, care, and community.",
+    href: "/about",
+  },
+  {
+    label: "Research Project",
+    title: "Images of God",
+    description:
+      "A John Templeton Foundation–supported project exploring the God and Self Representation of people with intellectual/developmental disabilities.",
+    href: "https://www.imagesofgod.ca",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* Hero */}
+      <section
+        aria-labelledby="hero-heading"
+        className="py-24 md:py-36 border-b border-[var(--border)]"
+      >
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent)] font-medium mb-6">
+              Keith Dow
+            </p>
+            <h1
+              id="hero-heading"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.12] text-[var(--foreground)]"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Theology, Disability,
+              <br className="hidden sm:block" /> and the Beauty of{" "}
+              <em className="not-italic text-[var(--accent)]">Human Limits</em>
+            </h1>
+            <p className="mt-7 text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-xl">
+              Scholarship, leadership, and public engagement at the intersection
+              of Christian faith, intellectual disability, and the ethics of
+              care.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/writing-and-work"
+                className="inline-flex items-center gap-2 bg-[var(--accent)] text-white text-sm font-medium px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity"
+              >
+                Explore my work
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center text-sm font-medium text-[var(--foreground)] px-5 py-2.5 rounded-md border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+              >
+                About Keith
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Areas of focus */}
+      <section aria-labelledby="areas-heading" className="py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <h2
+            id="areas-heading"
+            className="text-xs uppercase tracking-[0.15em] text-[var(--muted)] font-medium mb-10"
+          >
+            Areas of Focus
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {areas.map((area) => {
+              const isExternal = area.href.startsWith("http");
+              return (
+                <Card
+                  key={area.href}
+                  label={area.label}
+                  title={area.title}
+                  description={area.description}
+                  href={area.href}
+                  external={isExternal}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Formed Together feature */}
+      <section
+        aria-label="Formed Together"
+        className="border-t border-[var(--border)] bg-[var(--accent-light)] py-20 md:py-28"
+      >
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.15em] text-[var(--accent)] font-medium mb-4">
+              Book — Baylor University Press, 2021
+            </p>
+            <h2 className="font-serif text-2xl md:text-3xl font-semibold text-[var(--foreground)] leading-snug mb-5">
+              Formed Together: Mystery, Narrative, and Virtue in Christian Caregiving
+            </h2>
+            <p className="text-[var(--muted)] text-base leading-relaxed mb-6">
+              An invitation to encounter caregiving not as a set of skills to master, but as a
+              formative practice of love, humility, and courageous belonging — shaped by the
+              mystery of God&apos;s love already given. Rooted in lived experiences with people
+              with intellectual disabilities, <em>Formed Together</em> offers a reflective yet
+              accessible vision of Christian caregiving as mutual transformation, not mere service.
+            </p>
+            <Link
+              href="/formed-together"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:underline underline-offset-4"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              Learn more
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Bio intro */}
+      <section aria-labelledby="intro-heading" className="py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+            <div>
+              <h2
+                id="intro-heading"
+                className="font-serif text-2xl md:text-3xl font-semibold text-[var(--foreground)] leading-snug"
+              >
+                About Keith
+              </h2>
+            </div>
+            <div className="space-y-5 text-[var(--muted)] text-base leading-relaxed">
+              <p>
+                Keith Dow, PhD, is a Canadian theologian, researcher, and writer exploring the
+                beauty and complexity of human limits, care, and community. He works with Karis
+                Disability Services and completed a fellowship with the Psychology Cross-Training
+                for Theologians program through the University of Birmingham and Martin Luther
+                University College.
+              </p>
+              <p>
+                His research explores theology, disability, and the ethics of care, emphasizing
+                the beauty and limits of human life in community.
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:underline underline-offset-4 transition-all"
+              >
+                Read more
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
