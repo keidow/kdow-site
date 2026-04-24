@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Card from "@/components/Card";
 
 const areas = [
@@ -38,25 +39,25 @@ export default function Home() {
       {/* Hero */}
       <section
         aria-labelledby="hero-heading"
-        className="py-24 md:py-36 border-b border-[var(--border)]"
+        className="border-b border-[var(--border)] overflow-hidden"
       >
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 items-stretch">
+          {/* Left: text */}
+          <div className="py-16 md:py-24 px-6 lg:px-8 flex flex-col justify-center">
             <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent)] font-medium mb-6">
               Keith Dow
             </p>
             <h1
               id="hero-heading"
-              className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.12] text-[var(--foreground)]"
+              className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.12] text-[var(--foreground)]"
             >
               Theology, Disability,
               <br className="hidden sm:block" /> and the Beauty of{" "}
               <em className="not-italic text-[var(--accent)]">Human Limits</em>
             </h1>
-            <p className="mt-7 text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-xl">
+            <p className="mt-7 text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-[380px]">
               Scholarship, leadership, and public engagement at the intersection
-              of Christian faith, intellectual disability, and the ethics of
-              care.
+              of Christian faith, intellectual disability, and the ethics of care.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
@@ -65,7 +66,7 @@ export default function Home() {
               >
                 Explore my work
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
               <Link
@@ -75,6 +76,18 @@ export default function Home() {
                 About Keith
               </Link>
             </div>
+          </div>
+
+          {/* Right: artwork — background matches site colour, no fading needed */}
+          <div className="relative hidden md:block" style={{ minHeight: "320px" }} aria-hidden="true">
+            <Image
+              src="/images/graphic elements/pattern1b.png"
+              alt=""
+              fill
+              className="object-cover object-center"
+              style={{ opacity: 0.82 }}
+              priority
+            />
           </div>
         </div>
       </section>
@@ -132,7 +145,7 @@ export default function Home() {
             >
               Learn more
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
           </div>
@@ -169,13 +182,27 @@ export default function Home() {
               >
                 Read more
                 <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Decorative strip above footer */}
+      <div aria-hidden="true">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <Image
+            src="/images/graphic elements/longhoriz2.png"
+            alt=""
+            width={1453}
+            height={255}
+            className="w-full h-auto"
+            style={{ opacity: 0.85 }}
+          />
+        </div>
+      </div>
     </>
   );
 }

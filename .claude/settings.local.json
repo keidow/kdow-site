@@ -22,7 +22,22 @@
       "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/04/6Daniela.png\" -o \"iog-participant-daniela.png\")",
       "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/07/P1000030-1-edited.jpg\" -o \"iog-event-1.jpg\")",
       "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/07/P1000063-edited-1.jpg\" -o \"iog-event-2.jpg\")",
-      "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/07/Collage-Example-1024x768.jpg\" -o \"iog-collage-example.jpg\")"
+      "Bash(curl -sL \"https://imagesofgod.ca/wp-content/uploads/2025/07/Collage-Example-1024x768.jpg\" -o \"iog-collage-example.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images/variants.png\")",
+      "Bash(sips --cropToHeightWidth 660 490 --cropOffset 15 15 variants-p1.png)",
+      "Bash(sips --cropToHeightWidth 660 490 --cropOffset 15 525 variants-p2.png)",
+      "Bash(sips --cropToHeightWidth 660 490 --cropOffset 15 1040 variants-p3.png)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images/graphic elements/variants-p1.png\" \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images/graphic elements/variants-p2.png\" \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images/graphic elements/circles1.png\" \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images/graphic elements/circles2.png\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images/graphic elements/pattern1b.png\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images/graphic elements/longhoriz.png\")",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(sips -g all \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images/graphic elements/circles2.png\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\" \"http://localhost:3000/_next/image?url=%2Fimages%2Fgraphic%20elements%2Fcircles2.png&w=1920&q=75\")",
+      "Bash(curl -s -o /tmp/circles2_test.png -w \"%{http_code} size=%{size_download}\" \"http://localhost:3000/_next/image?url=%2Fimages%2Fgraphic%20elements%2Fcircles2.png&w=828&q=75\")",
+      "Read(//tmp/**)",
+      "Bash(xargs -I{} sh -c 'echo \"{}\"; file \"{}\"')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:3000/images/graphic%20elements/circles2.png\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/keith/Project Files/ClaudeCode/KeithDow.com/public/images/graphic elements/longhoriz2.png\")"
     ]
   }
 }

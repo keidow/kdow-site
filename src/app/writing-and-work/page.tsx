@@ -276,6 +276,9 @@ export default function WritingAndWork() {
         label="Writing & Work"
         title="Scholarship, Essays & Public Engagement"
         description="Peer-reviewed articles, book chapters, podcast hosting, and public writing at the intersection of theology, disability, and the ethics of care."
+        artworkSrc="/images/graphic elements/circles2.png"
+        artworkWidth={768}
+        artworkHeight={186}
       />
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8 py-12 md:py-16">

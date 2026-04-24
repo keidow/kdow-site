@@ -43,3 +43,25 @@ html {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+/* Hero abstract shape animations — Variant B */
+@keyframes hero-drift-a {
+  from { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.32; }
+  to   { transform: translate(-28px, 36px) scale(1.05) rotate(2deg); opacity: 0.40; }
+}
+@keyframes hero-drift-b {
+  from { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.48; }
+  to   { transform: translate(22px, -28px) scale(0.94) rotate(-3deg); opacity: 0.55; }
+}
+@keyframes hero-drift-c {
+  from { transform: translateY(0) scaleX(1); }
+  to   { transform: translateY(20px) scaleX(1.04); }
+}
+@keyframes hero-drift-d {
+  from { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.52; }
+  to   { transform: translate(-18px, -30px) scale(1.04) rotate(2.5deg); opacity: 0.44; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-shape { animation: none !important; }
+}

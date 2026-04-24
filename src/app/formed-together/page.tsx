@@ -9,19 +9,19 @@ export const metadata: Metadata = {
 };
 
 const reviews = [
-  { reviewer: "Charles Camosy", publication: "Studies in Christian Ethics" },
-  { reviewer: "Jesse Kane", publication: "Faith Today" },
-  { reviewer: "Michael Bonikowsky", publication: "Disability and Faith Forum" },
-  { reviewer: "J. Tyler Campbell", publication: "Journal of Disability and Religion" },
-  { reviewer: "Frances Young", publication: "Theology" },
+  { reviewer: "Charles Camosy", publication: "Studies in Christian Ethics", href: "https://journals.sagepub.com/doi/abs/10.1177/09539468221122374g" },
+  { reviewer: "Jesse Kane", publication: "Faith Today", href: "https://www.faithtoday.ca/Magazines/2022-May-Jun/Formed-Together-Mystery,-Narrative-and-Virtue-in" },
+  { reviewer: "Michael Bonikowsky", publication: "Disability and Faith Forum", href: "https://disabilityandfaith.org/book-review-formed-together/" },
+  { reviewer: "J. Tyler Campbell", publication: "Journal of Disability and Religion", href: "https://www.tandfonline.com/doi/full/10.1080/23312521.2021.2016549" },
+  { reviewer: "Frances Young", publication: "Theology", href: "https://journals.sagepub.com/doi/10.1177/0040571X211056801f" },
 ];
 
 const purchaseLinks = [
-  { label: "Baylor University Press", href: "https://www.baylorpress.com" },
-  { label: "Amazon Canada", href: "https://www.amazon.ca" },
-  { label: "Amazon USA", href: "https://www.amazon.com" },
-  { label: "Barnes & Noble", href: "https://www.barnesandnoble.com" },
-  { label: "Project MUSE", href: "https://muse.jhu.edu" },
+  { label: "Baylor University Press", href: "https://www.baylorpress.com/9781481313216/formed-together/" },
+  { label: "Amazon Canada", href: "https://www.amazon.ca/dp/1481313215/" },
+  { label: "Amazon USA", href: "https://www.amazon.com/dp/1481313215/" },
+  { label: "Barnes & Noble", href: "http://www.barnesandnoble.com/w/formed-together-keith-dow/1137379370" },
+  { label: "Project MUSE", href: "https://muse.jhu.edu/book/83395" },
 ];
 
 export default function FormedTogether() {
@@ -31,6 +31,9 @@ export default function FormedTogether() {
         label="Book — Baylor University Press, 2021"
         title="Formed Together: Mystery, Narrative, and Virtue in Christian Caregiving"
         description="Part of the Baylor University Press Studies on Religion, Theology and Disability series."
+        artworkSrc="/images/graphic elements/variants-p2.png"
+        artworkWidth={487}
+        artworkHeight={492}
       />
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
@@ -79,34 +82,10 @@ export default function FormedTogether() {
           </div>
         </section>
 
-        {/* Reviews */}
-        <section
-          aria-labelledby="reviews-heading"
-          className="py-16 md:py-20 border-b border-[var(--border)]"
-        >
-          <h2
-            id="reviews-heading"
-            className="text-xs uppercase tracking-[0.15em] text-[var(--muted)] font-medium mb-10"
-          >
-            Reviews
-          </h2>
-          <ul className="space-y-0">
-            {reviews.map((r) => (
-              <li
-                key={r.reviewer}
-                className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-4 border-b border-[var(--border)] last:border-0 gap-1"
-              >
-                <p className="text-sm font-medium text-[var(--foreground)]">{r.reviewer}</p>
-                <p className="text-sm text-[var(--muted)]">{r.publication}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-
         {/* Purchase */}
         <section
           aria-labelledby="purchase-heading"
-          className="py-16 md:py-20"
+          className="py-16 md:py-20 border-b border-[var(--border)]"
         >
           <h2
             id="purchase-heading"
@@ -127,6 +106,37 @@ export default function FormedTogether() {
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                     <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Reviews */}
+        <section
+          aria-labelledby="reviews-heading"
+          className="py-16 md:py-20"
+        >
+          <h2
+            id="reviews-heading"
+            className="text-xs uppercase tracking-[0.15em] text-[var(--muted)] font-medium mb-10"
+          >
+            Reviews
+          </h2>
+          <ul className="space-y-0">
+            {reviews.map((r) => (
+              <li
+                key={r.reviewer}
+                className="border-b border-[var(--border)] last:border-0"
+              >
+                <a
+                  href={r.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-4 gap-1 hover:text-[var(--accent)] transition-colors group"
+                >
+                  <p className="text-sm font-medium text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">{r.reviewer}</p>
+                  <p className="text-sm text-[var(--muted)]">{r.publication}</p>
                 </a>
               </li>
             ))}

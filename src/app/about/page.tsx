@@ -46,6 +46,9 @@ export default function About() {
         label="About"
         title="Keith Dow, PhD"
         description="Canadian theologian, researcher, and writer exploring the beauty and complexity of human limits, care, and community."
+        artworkSrc="/images/graphic elements/circles1.png"
+        artworkWidth={740}
+        artworkHeight={165}
       />
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
