@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 
@@ -141,6 +141,7 @@ const items: Item[] = [
       "Discusses Formed Together and work with Karis Disability Services, covering disability theology, care ethics, and complex ethical questions including Medical Assistance in Dying from a Christian perspective.",
     meta: "The Faith Today Podcast · Ep. 252 · December 2025",
     href: "https://www.buzzsprout.com/1863668/episodes/18495716-suffering-identity-hope-christian-approaches-to-caregiving-ep-252",
+    image: "/images/podcast-faith-today.jpg",
   },
   {
     category: "podcasts",
@@ -149,6 +150,7 @@ const items: Item[] = [
     description: "A conversation on personhood, human limits, and pastoral formation.",
     meta: "The Personalist Manifesto Podcast · February 2025",
     href: "https://personalistmanifestos.substack.com/p/limits-personhood-formation-and-ministry",
+    image: "/images/podcast-personalist-manifesto.png",
   },
   {
     category: "podcasts",
@@ -157,6 +159,7 @@ const items: Item[] = [
     description: "On what it looks like for churches and communities to genuinely serve alongside people with disabilities.",
     meta: "The Sowers Podcast · September 2024",
     href: "https://creators.spotify.com/pod/show/the-sowers-pod/episodes/46---Keith-Dow-on-Serving-Alongside-People-With-Disabilities-e2u2j28/a-abogv7n",
+    image: "/images/podcast-sowers.jpg",
   },
   {
     category: "podcasts",
@@ -165,6 +168,7 @@ const items: Item[] = [
     description: "A theological conversation on virtue, moral agency, and the ethics of care.",
     meta: "The Two Cities Podcast · April 2023",
     href: "https://www.thetwocities.com/culture/virtue-agency-christian-caregiving-with-dr-keith-dow-podcast/",
+    image: "/images/podcast-two-cities.jpg",
   },
   {
     category: "podcasts",
@@ -173,6 +177,7 @@ const items: Item[] = [
     description: "On Greek intellectualism in Western theology and what it means for disability and the church.",
     meta: "Faith Today Podcast with Karen Stiller · March 2022",
     href: "https://www.faithtoday.ca/Audio-Video/Podcasts/Toward-accessible-faith-and-flourishing,-with-Keit",
+    image: "/images/podcast-faith-today.jpg",
   },
   {
     category: "podcasts",
@@ -189,6 +194,7 @@ const items: Item[] = [
     description: "An early conversation on Keith's research and the relationship between theology and disability.",
     meta: "A Podcast of Discipleship · 2018",
     href: "http://www.stephenjbedard.com/2018/08/23/at-the-intersection-of-theology-and-disability/",
+    image: "/images/podcast-bedard.jpg",
   },
 
   // Videos
@@ -200,6 +206,7 @@ const items: Item[] = [
       "Keith Dow and Karis Disability Services were featured on Canada's longest-running daily Christian television program, discussing the Images of God project and how adults with intellectual disabilities experience and express God through art.",
     meta: "100 Huntley Street · March 26, 2026",
     href: "https://youtu.be/PkR8YqimCcg",
+    image: "/images/video-100-huntley.jpg",
     secondaryLinks: [
       { label: "Episode page", href: "https://100huntley.com/featured_today/100-huntley-street-march-26-2026/" },
     ],
@@ -211,6 +218,7 @@ const items: Item[] = [
     description: "A presentation exploring what it means to move from presence to participation in disability ministry.",
     meta: "From Presence to Participation Webinar · March 2022",
     href: "https://youtu.be/T7t_ihSLaPw",
+    image: "/images/video-letting-go.jpg",
   },
   {
     category: "videos",
@@ -219,6 +227,7 @@ const items: Item[] = [
     description: "A conversation on Formed Together with theologian Brian Brock.",
     meta: "Institute on Theology and Disability · September 2021",
     href: "https://youtu.be/Gfm7uI6nc8U",
+    image: "/images/video-brian-brock.jpg",
   },
   {
     category: "videos",
@@ -227,6 +236,7 @@ const items: Item[] = [
     description: "A TED-style overview of Keith's doctoral research on loving neighbours with intellectual disabilities.",
     meta: "Institute on Theology and Disability · 2019",
     href: "https://youtu.be/RvQJiVxKyYM?t=541",
+    image: "/images/video-phd-overview.jpg",
   },
   {
     category: "videos",
@@ -235,6 +245,7 @@ const items: Item[] = [
     description: "On what it looks like for local congregations to embody incarnational ministry.",
     meta: "Inclusion Fusion Conference · 2018",
     href: "https://vimeo.com/266402722",
+    image: "/images/video-incarnational.jpg",
   },
 
   // Other Writing
@@ -245,6 +256,7 @@ const items: Item[] = [
     description: "Essays and reflections at the intersection of Christian faith and disability.",
     meta: "Author page",
     href: "https://disabilityandfaith.org/author/kdow/",
+    image: "/images/platform-disability-faith.png",
   },
   {
     category: "other",
@@ -253,6 +265,7 @@ const items: Item[] = [
     description: "Public essays on faith, culture, and common life in Canada.",
     meta: "Author page",
     href: "https://www.convivium.ca/writers/bio/kdow/",
+    image: "/images/platform-convivium.png",
   },
   {
     category: "other",
@@ -261,6 +274,7 @@ const items: Item[] = [
     description: "Writing on community, inclusion, and social change.",
     meta: "Author page",
     href: "https://www.tamarackcommunity.ca/latest/author/keith-dow",
+    image: "/images/platform-tamarack.png",
   },
   {
     category: "other",
@@ -293,6 +307,44 @@ const filters: { id: Category; label: string }[] = [
 const accessColors: Record<string, string> = {
   "Open Access": "text-[var(--accent)] bg-[var(--accent-light)]",
   "Limited Access": "text-[var(--muted)] bg-[var(--border)]",
+};
+
+const categoryIcons: Record<Exclude<Category, "all">, React.ReactNode> = {
+  book: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+    </svg>
+  ),
+  articles: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+      <line x1="10" y1="9" x2="8" y2="9"/>
+    </svg>
+  ),
+  podcasts: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
+      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+      <line x1="12" y1="19" x2="12" y2="23"/>
+      <line x1="8" y1="23" x2="16" y2="23"/>
+    </svg>
+  ),
+  videos: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
+      <polygon points="23 7 16 12 23 17 23 7"/>
+      <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+    </svg>
+  ),
+  other: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
+      <path d="M12 20h9"/>
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+    </svg>
+  ),
 };
 
 export default function WritingAndWork() {
@@ -341,119 +393,95 @@ export default function WritingAndWork() {
 
         {/* List */}
         <ul className="space-y-0">
-          {visible.map((item) => (
-            <li key={item.title} className="border-b border-[var(--border)] last:border-0">
-              {item.secondaryLinks ? (
-                /* Multi-link card — div wrapper to avoid nested <a> */
-                <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-6">
-                  {item.image ? (
-                    <Image
-                      src={item.image}
-                      alt=""
-                      width={56}
-                      height={72}
-                      className="shrink-0 rounded object-cover w-14 h-[4.5rem]"
-                    />
-                  ) : (
-                    <span className="shrink-0 text-xs uppercase tracking-[0.1em] text-[var(--accent)] font-medium sm:w-32 pt-0.5">
-                      {item.label}
-                    </span>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline"
-                    >
-                      <p className="font-serif text-base font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors">
-                        {item.title}
-                        <svg
-                          className="inline-block ml-1.5 mb-0.5 opacity-40 group-hover:opacity-70 transition-opacity"
-                          width="10" height="10" viewBox="0 0 10 10" fill="none"
-                          aria-hidden="true"
-                        >
-                          <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </p>
-                    </a>
-                    <p className="mt-1 text-xs text-[var(--muted)]">
-                      {item.meta}
-                      {item.access && (
-                        <span className={`ml-2 inline-block px-2 py-0.5 rounded-full text-[10px] font-medium ${accessColors[item.access]}`}>
-                          {item.access}
-                        </span>
-                      )}
-                    </p>
-                    <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                      {item.description}
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-3">
-                      {item.secondaryLinks.map((link) => (
-                        <a
-                          key={link.label}
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-xs text-[var(--accent)] hover:underline underline-offset-4"
-                        >
-                          {link.label}
-                          <svg width="8" height="8" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                            <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
+          {visible.map((item) => {
+            const iconLabel = (
+              <span className="shrink-0 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.1em] text-[var(--accent)] font-medium sm:w-32 pt-0.5">
+                {categoryIcons[item.category]}
+                {item.label}
+              </span>
+            );
+
+            const externalArrow = (
+              <svg className="inline-block ml-1.5 mb-0.5 opacity-40 group-hover:opacity-70 transition-opacity" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            );
+
+            const thumbnail = item.image ? (
+              <Image
+                src={item.image}
+                alt=""
+                width={56}
+                height={72}
+                className="shrink-0 rounded-lg object-cover w-14 h-14"
+              />
+            ) : null;
+
+            const meta = (
+              <p className="mt-1 text-xs text-[var(--muted)]">
+                {item.meta}
+                {item.access && (
+                  <span className={`ml-2 inline-block px-2 py-0.5 rounded-full text-[10px] font-medium ${accessColors[item.access]}`}>
+                    {item.access}
+                  </span>
+                )}
+              </p>
+            );
+
+            const description = (
+              <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
+                {item.description}
+              </p>
+            );
+
+            return (
+              <li key={item.title} className="border-b border-[var(--border)] last:border-0">
+                {item.secondaryLinks ? (
+                  /* Multi-link card — div wrapper to avoid nested <a> */
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-6">
+                    {iconLabel}
+                    <div className="flex flex-1 min-w-0 gap-4 items-start">
+                      <div className="flex-1 min-w-0">
+                        <a href={item.href} target="_blank" rel="noopener noreferrer" className="group inline">
+                          <p className="font-serif text-base font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors">
+                            {item.title}{externalArrow}
+                          </p>
                         </a>
-                      ))}
+                        {meta}
+                        {description}
+                        <div className="mt-3 flex flex-wrap gap-3">
+                          {item.secondaryLinks.map((link) => (
+                            <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-[var(--accent)] hover:underline underline-offset-4">
+                              {link.label}
+                              <svg width="8" height="8" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                                <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                      {thumbnail}
                     </div>
                   </div>
-                </div>
-              ) : (
-                /* Standard single-link card */
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-6 hover:bg-[var(--accent-light)] -mx-4 px-4 rounded-lg transition-colors"
-                >
-                  {item.image ? (
-                    <Image
-                      src={item.image}
-                      alt=""
-                      width={56}
-                      height={72}
-                      className="shrink-0 rounded object-cover w-14 h-[4.5rem]"
-                    />
-                  ) : (
-                    <span className="shrink-0 text-xs uppercase tracking-[0.1em] text-[var(--accent)] font-medium sm:w-32 pt-0.5">
-                      {item.label}
-                    </span>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <p className="font-serif text-base font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors">
-                      {item.title}
-                      <svg
-                        className="inline-block ml-1.5 mb-0.5 opacity-40 group-hover:opacity-70 transition-opacity"
-                        width="10" height="10" viewBox="0 0 10 10" fill="none"
-                        aria-hidden="true"
-                      >
-                        <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </p>
-                    <p className="mt-1 text-xs text-[var(--muted)]">
-                      {item.meta}
-                      {item.access && (
-                        <span className={`ml-2 inline-block px-2 py-0.5 rounded-full text-[10px] font-medium ${accessColors[item.access]}`}>
-                          {item.access}
-                        </span>
-                      )}
-                    </p>
-                    <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </a>
-              )}
-            </li>
-          ))}
+                ) : (
+                  /* Standard single-link card */
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-6 hover:bg-[var(--accent-light)] -mx-4 px-4 rounded-lg transition-colors">
+                    {iconLabel}
+                    <div className="flex flex-1 min-w-0 gap-4 items-start">
+                      <div className="flex-1 min-w-0">
+                        <p className="font-serif text-base font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors">
+                          {item.title}{externalArrow}
+                        </p>
+                        {meta}
+                        {description}
+                      </div>
+                      {thumbnail}
+                    </div>
+                  </a>
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         {/* Speaking CTA */}

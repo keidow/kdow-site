@@ -7,6 +7,7 @@ interface PageHeaderProps {
   artworkSrc?: string;
   artworkWidth?: number;
   artworkHeight?: number;
+  artworkOpacity?: number;
 }
 
 export default function PageHeader({
@@ -16,6 +17,7 @@ export default function PageHeader({
   artworkSrc,
   artworkWidth,
   artworkHeight,
+  artworkOpacity = 0.78,
 }: PageHeaderProps) {
   const isStrip = artworkWidth && artworkHeight && artworkWidth / artworkHeight > 2.5;
 
@@ -45,7 +47,7 @@ export default function PageHeader({
               alt=""
               fill
               className="object-cover object-center"
-              style={{ opacity: 0.78 }}
+              style={{ opacity: artworkOpacity }}
             />
           </div>
         </div>

@@ -39,6 +39,10 @@ export default function ImagesOfGod() {
         label="Research Project"
         title="Images of God: Through the Lens of Disability"
         description="An Ontario-based arts research project exploring how Christian adults with intellectual disabilities understand God and themselves."
+        artworkSrc="/images/Art-Collage.png"
+        artworkWidth={1080}
+        artworkHeight={1080}
+        artworkOpacity={1}
       />
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
