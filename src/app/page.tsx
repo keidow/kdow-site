@@ -1,6 +1,30 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Card from "@/components/Card";
+import { JsonLd } from "@/components/JsonLd";
+import { homeJsonLd } from "@/lib/jsonld";
+
+const siteUrl = "https://keithdow.com";
+
+export const metadata: Metadata = {
+  title: "Keith Dow | Theology, Disability, and the Beauty of Human Limits",
+  description:
+    "Keith Dow, PhD, is a Canadian theologian, researcher, writer, and accessibility consultant working at the intersection of Christian theology, disability, caregiving, spirituality, and belonging.",
+  alternates: { canonical: `${siteUrl}/` },
+  openGraph: {
+    title: "Keith Dow | Theology, Disability, and the Beauty of Human Limits",
+    description:
+      "Keith Dow, PhD, is a Canadian theologian, researcher, writer, and accessibility consultant working at the intersection of Christian theology, disability, caregiving, spirituality, and belonging.",
+    url: `${siteUrl}/`,
+    type: "website",
+  },
+  twitter: {
+    title: "Keith Dow | Theology, Disability, and the Beauty of Human Limits",
+    description:
+      "Keith Dow, PhD, is a Canadian theologian, researcher, writer, and accessibility consultant working at the intersection of Christian theology, disability, caregiving, spirituality, and belonging.",
+  },
+};
 
 const areas = [
   {
@@ -36,6 +60,7 @@ const areas = [
 export default function Home() {
   return (
     <>
+      <JsonLd data={homeJsonLd} />
       {/* Hero */}
       <section
         aria-labelledby="hero-heading"

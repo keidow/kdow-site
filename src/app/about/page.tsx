@@ -2,11 +2,28 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
+import { aboutJsonLd } from "@/lib/jsonld";
+
+const siteUrl = "https://keithdow.com";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: { absolute: "About Keith Dow | Theology, Disability, and Care" },
   description:
-    "Keith Dow, PhD, is a Canadian theologian, researcher, and writer exploring the beauty and complexity of human limits, care, and community.",
+    "About Keith Dow, PhD: Canadian theologian, researcher, writer, and accessibility consultant working at the intersection of Christian theology, disability, caregiving, spirituality, and belonging.",
+  alternates: { canonical: `${siteUrl}/about` },
+  openGraph: {
+    title: "About Keith Dow",
+    description:
+      "Canadian theologian, researcher, writer, and accessibility consultant working at the intersection of Christian theology, disability, caregiving, spirituality, and belonging.",
+    url: `${siteUrl}/about`,
+    type: "profile",
+  },
+  twitter: {
+    title: "About Keith Dow",
+    description:
+      "Canadian theologian, researcher, writer, and accessibility consultant working at the intersection of Christian theology, disability, caregiving, spirituality, and belonging.",
+  },
 };
 
 const credentials = [
@@ -28,20 +45,24 @@ const affiliations = [
   {
     name: "Karis Disability Services",
     note: "Formerly Christian Horizons",
+    href: "https://www.karis.org/",
   },
   {
     name: "Psychology Cross-Training for Theologians",
     note: "Fellowship \u2014 University of Birmingham & Martin Luther University College",
+    href: "https://crosstrainingpsychologyandtheology.com/",
   },
   {
     name: "John Templeton Foundation",
     note: "Images of God research project (grant recipient)",
+    href: "https://www.templeton.org/",
   },
 ];
 
 export default function About() {
   return (
     <>
+      <JsonLd data={aboutJsonLd} />
       <PageHeader
         label="About"
         title="Keith Dow, PhD"
@@ -78,8 +99,16 @@ export default function About() {
               </h2>
               <p>
                 Keith Dow, PhD, is a Canadian theologian, researcher, and writer exploring the
-                beauty and complexity of human limits, care, and community. He works with Karis
-                Disability Services (formerly Christian Horizons) and completed a fellowship with
+                beauty and complexity of human limits, care, and community. He works with{" "}
+                <a
+                  href="https://www.karis.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-[var(--accent)] transition-colors"
+                >
+                  Karis Disability Services
+                </a>{" "}
+                (formerly Christian Horizons) and completed a fellowship with
                 the Psychology Cross-Training for Theologians program through the University of
                 Birmingham and Martin Luther University College.
               </p>
@@ -111,7 +140,7 @@ export default function About() {
                   Email Keith
                 </a>
                 <a
-                  href="https://substack.com"
+                  href="https://keithdow.substack.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:underline underline-offset-4"
@@ -119,7 +148,7 @@ export default function About() {
                   Substack
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/keithdow/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:underline underline-offset-4"
@@ -148,7 +177,21 @@ export default function About() {
                 key={a.name}
                 className="py-5 border-b border-[var(--border)] last:border-0"
               >
-                <p className="font-serif text-base font-semibold text-[var(--foreground)]">{a.name}</p>
+                {a.href ? (
+                  <a
+                    href={a.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-serif text-base font-semibold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors inline-flex items-center gap-1.5"
+                  >
+                    {a.name}
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                      <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                ) : (
+                  <p className="font-serif text-base font-semibold text-[var(--foreground)]">{a.name}</p>
+                )}
                 <p className="text-sm text-[var(--muted)] mt-0.5">{a.note}</p>
               </li>
             ))}

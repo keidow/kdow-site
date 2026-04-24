@@ -16,13 +16,35 @@ const lora = Lora({
   display: "swap",
 });
 
+const siteUrl = "https://keithdow.com";
+const defaultDescription =
+  "Keith Dow, PhD, is a Canadian theologian, researcher, writer, and accessibility consultant working at the intersection of Christian theology, disability, caregiving, spirituality, and belonging.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Keith Dow",
+    default: "Keith Dow | Theology, Disability, and the Beauty of Human Limits",
     template: "%s | Keith Dow",
   },
-  description:
-    "Scholarship, leadership, and public engagement at the intersection of Christian faith, intellectual disability, and the ethics of care.",
+  description: defaultDescription,
+  authors: [{ name: "Keith Dow", url: siteUrl }],
+  creator: "Keith Dow",
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    siteName: "Keith Dow",
+    title: "Keith Dow | Theology, Disability, and the Beauty of Human Limits",
+    description: defaultDescription,
+    url: siteUrl,
+    images: [{ url: "/images/keith-headshot.jpeg", alt: "Keith Dow" }],
+    locale: "en_CA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Keith Dow | Theology, Disability, and the Beauty of Human Limits",
+    description: defaultDescription,
+    images: ["/images/keith-headshot.jpeg"],
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-CA"
       className={`${inter.variable} ${lora.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">

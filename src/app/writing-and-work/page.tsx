@@ -15,6 +15,7 @@ interface Item {
   href: string;
   access?: "Open Access" | "Limited Access";
   image?: string;
+  secondaryLinks?: { label: string; href: string }[];
 }
 
 const items: Item[] = [
@@ -38,6 +39,9 @@ const items: Item[] = [
     meta: "Wipf and Stock · Ed. Stanley Hauerwas & Hans Reinders · 2024",
     href: "https://wipfandstock.com/9781666772302/the-betrayal-of-witness/",
     image: "/images/betrayal-of-witness-cover.jpeg",
+    secondaryLinks: [
+      { label: "Faith Today review", href: "https://www.faithtoday.ca/Magazines/2025-Jan-Feb/The-Betrayal-of-Witness-Reflections-on-the-Downfa" },
+    ],
   },
 
   // Journal Articles
@@ -122,6 +126,10 @@ const items: Item[] = [
     meta: "Apple Podcasts · Spotify · SoundCloud",
     href: "https://podcasts.apple.com/ca/podcast/renew-caring-for-you-as-you-care-for-others/id1508594360",
     image: "/images/renew-podcast.jpg",
+    secondaryLinks: [
+      { label: "Spotify", href: "https://open.spotify.com/show/6k2Akom89p4P6fAfZjbyBn" },
+      { label: "SoundCloud", href: "https://soundcloud.com/christianhorizons" },
+    ],
   },
 
   // Podcasts — Appearances
@@ -314,52 +322,115 @@ export default function WritingAndWork() {
         <ul className="space-y-0">
           {visible.map((item) => (
             <li key={item.title} className="border-b border-[var(--border)] last:border-0">
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-6 hover:bg-[var(--accent-light)] -mx-4 px-4 rounded-lg transition-colors"
-              >
-                {/* Left: thumbnail (if present) or label */}
-                {item.image ? (
-                  <Image
-                    src={item.image}
-                    alt=""
-                    width={56}
-                    height={72}
-                    className="shrink-0 rounded object-cover w-14 h-[4.5rem]"
-                  />
-                ) : (
-                  <span className="shrink-0 text-xs uppercase tracking-[0.1em] text-[var(--accent)] font-medium sm:w-32 pt-0.5">
-                    {item.label}
-                  </span>
-                )}
-
-                {/* Right: content */}
-                <div className="flex-1 min-w-0">
-                  <p className="font-serif text-base font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors">
-                    {item.title}
-                    <svg
-                      className="inline-block ml-1.5 mb-0.5 opacity-40 group-hover:opacity-70 transition-opacity"
-                      width="10" height="10" viewBox="0 0 10 10" fill="none"
-                      aria-hidden="true"
+              {item.secondaryLinks ? (
+                /* Multi-link card — div wrapper to avoid nested <a> */
+                <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-6">
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt=""
+                      width={56}
+                      height={72}
+                      className="shrink-0 rounded object-cover w-14 h-[4.5rem]"
+                    />
+                  ) : (
+                    <span className="shrink-0 text-xs uppercase tracking-[0.1em] text-[var(--accent)] font-medium sm:w-32 pt-0.5">
+                      {item.label}
+                    </span>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline"
                     >
-                      <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </p>
-                  <p className="mt-1 text-xs text-[var(--muted)]">
-                    {item.meta}
-                    {item.access && (
-                      <span className={`ml-2 inline-block px-2 py-0.5 rounded-full text-[10px] font-medium ${accessColors[item.access]}`}>
-                        {item.access}
-                      </span>
-                    )}
-                  </p>
-                  <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-                    {item.description}
-                  </p>
+                      <p className="font-serif text-base font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors">
+                        {item.title}
+                        <svg
+                          className="inline-block ml-1.5 mb-0.5 opacity-40 group-hover:opacity-70 transition-opacity"
+                          width="10" height="10" viewBox="0 0 10 10" fill="none"
+                          aria-hidden="true"
+                        >
+                          <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </p>
+                    </a>
+                    <p className="mt-1 text-xs text-[var(--muted)]">
+                      {item.meta}
+                      {item.access && (
+                        <span className={`ml-2 inline-block px-2 py-0.5 rounded-full text-[10px] font-medium ${accessColors[item.access]}`}>
+                          {item.access}
+                        </span>
+                      )}
+                    </p>
+                    <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
+                      {item.description}
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-3">
+                      {item.secondaryLinks.map((link) => (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs text-[var(--accent)] hover:underline underline-offset-4"
+                        >
+                          {link.label}
+                          <svg width="8" height="8" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </a>
+              ) : (
+                /* Standard single-link card */
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-6 hover:bg-[var(--accent-light)] -mx-4 px-4 rounded-lg transition-colors"
+                >
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt=""
+                      width={56}
+                      height={72}
+                      className="shrink-0 rounded object-cover w-14 h-[4.5rem]"
+                    />
+                  ) : (
+                    <span className="shrink-0 text-xs uppercase tracking-[0.1em] text-[var(--accent)] font-medium sm:w-32 pt-0.5">
+                      {item.label}
+                    </span>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <p className="font-serif text-base font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors">
+                      {item.title}
+                      <svg
+                        className="inline-block ml-1.5 mb-0.5 opacity-40 group-hover:opacity-70 transition-opacity"
+                        width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true"
+                      >
+                        <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </p>
+                    <p className="mt-1 text-xs text-[var(--muted)]">
+                      {item.meta}
+                      {item.access && (
+                        <span className={`ml-2 inline-block px-2 py-0.5 rounded-full text-[10px] font-medium ${accessColors[item.access]}`}>
+                          {item.access}
+                        </span>
+                      )}
+                    </p>
+                    <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </a>
+              )}
             </li>
           ))}
         </ul>

@@ -1,11 +1,28 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
+import { JsonLd } from "@/components/JsonLd";
+import { formedTogetherJsonLd } from "@/lib/jsonld";
+
+const siteUrl = "https://keithdow.com";
 
 export const metadata: Metadata = {
-  title: "Formed Together",
+  title: { absolute: "Formed Together | Keith Dow" },
   description:
-    "Formed Together: Mystery, Narrative, and Virtue in Christian Caregiving — published by Baylor University Press.",
+    "Formed Together: Mystery, Narrative, and Virtue in Christian Caregiving by Keith Dow, published by Baylor University Press.",
+  alternates: { canonical: `${siteUrl}/formed-together` },
+  openGraph: {
+    title: "Formed Together | Keith Dow",
+    description:
+      "Formed Together: Mystery, Narrative, and Virtue in Christian Caregiving by Keith Dow, published by Baylor University Press.",
+    url: `${siteUrl}/formed-together`,
+    type: "book",
+  },
+  twitter: {
+    title: "Formed Together | Keith Dow",
+    description:
+      "Formed Together: Mystery, Narrative, and Virtue in Christian Caregiving by Keith Dow, published by Baylor University Press.",
+  },
 };
 
 const reviews = [
@@ -27,6 +44,7 @@ const purchaseLinks = [
 export default function FormedTogether() {
   return (
     <>
+      <JsonLd data={formedTogetherJsonLd} />
       <PageHeader
         label="Book — Baylor University Press, 2021"
         title="Formed Together: Mystery, Narrative, and Virtue in Christian Caregiving"

@@ -1,11 +1,28 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
+import { JsonLd } from "@/components/JsonLd";
+import { imagesOfGodJsonLd } from "@/lib/jsonld";
+
+const siteUrl = "https://keithdow.com";
 
 export const metadata: Metadata = {
-  title: "Images of God",
+  title: { absolute: "Images of God | Keith Dow" },
   description:
-    "An Ontario-based arts research project exploring how Christian adults with intellectual disabilities understand God and themselves. Supported by the John Templeton Foundation.",
+    "Images of God: Through the Lens of Disability is an arts-based research project exploring God and self representation with Christian adults with intellectual disabilities.",
+  alternates: { canonical: `${siteUrl}/images-of-god` },
+  openGraph: {
+    title: "Images of God | Keith Dow",
+    description:
+      "Images of God: Through the Lens of Disability is an arts-based research project exploring God and self representation with Christian adults with intellectual disabilities.",
+    url: `${siteUrl}/images-of-god`,
+    type: "website",
+  },
+  twitter: {
+    title: "Images of God | Keith Dow",
+    description:
+      "Images of God: Through the Lens of Disability is an arts-based research project exploring God and self representation with Christian adults with intellectual disabilities.",
+  },
 };
 
 const participants = [
@@ -17,6 +34,7 @@ const participants = [
 export default function ImagesOfGod() {
   return (
     <>
+      <JsonLd data={imagesOfGodJsonLd} />
       <PageHeader
         label="Research Project"
         title="Images of God: Through the Lens of Disability"
@@ -178,6 +196,45 @@ export default function ImagesOfGod() {
               </footer>
             </blockquote>
           </div>
+        </section>
+
+        {/* Media & Project Links */}
+        <section
+          aria-labelledby="media-heading"
+          className="py-16 md:py-20 border-b border-[var(--border)]"
+        >
+          <h2
+            id="media-heading"
+            className="text-xs uppercase tracking-[0.15em] text-[var(--muted)] font-medium mb-10"
+          >
+            Media &amp; Project Links
+          </h2>
+          <ul className="space-y-0">
+            {[
+              { label: "Full project site", note: "imagesofgod.ca", href: "https://www.imagesofgod.ca" },
+              { label: "Faith Today coverage", note: "March/April 2025", href: "https://imagesofgod.ca/2025/03/07/faith-today-article/" },
+              { label: "Martin Luther University College", note: "Art & Vespers 2025", href: "https://luther.wlu.ca/news/2025/winter/art-and-vespers-2025.html" },
+              { label: "Karis Disability Services", note: "Project partner", href: "https://www.karis.org/" },
+            ].map((link) => (
+              <li
+                key={link.href}
+                className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-4 border-b border-[var(--border)] last:border-0 gap-1"
+              >
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
+                >
+                  {link.label}
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                    <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+                <p className="text-sm text-[var(--muted)]">{link.note}</p>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* CTA */}
