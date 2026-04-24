@@ -136,6 +136,15 @@ const items: Item[] = [
   {
     category: "podcasts",
     label: "Podcast Appearance",
+    title: "Suffering, Identity & Hope: Christian Approaches to Caregiving",
+    description:
+      "Discusses Formed Together and work with Karis Disability Services, covering disability theology, care ethics, and complex ethical questions including Medical Assistance in Dying from a Christian perspective.",
+    meta: "The Faith Today Podcast · Ep. 252 · December 2025",
+    href: "https://www.buzzsprout.com/1863668/episodes/18495716-suffering-identity-hope-christian-approaches-to-caregiving-ep-252",
+  },
+  {
+    category: "podcasts",
+    label: "Podcast Appearance",
     title: "Limits, Personhood, Formation & Ministry",
     description: "A conversation on personhood, human limits, and pastoral formation.",
     meta: "The Personalist Manifesto Podcast · February 2025",
@@ -183,6 +192,18 @@ const items: Item[] = [
   },
 
   // Videos
+  {
+    category: "videos",
+    label: "TV Appearance",
+    title: "Faith, Art, and Intellectual Disability — Karis on 100 Huntley Street",
+    description:
+      "Keith Dow and Karis Disability Services were featured on Canada's longest-running daily Christian television program, discussing the Images of God project and how adults with intellectual disabilities experience and express God through art.",
+    meta: "100 Huntley Street · March 26, 2026",
+    href: "https://youtu.be/PkR8YqimCcg",
+    secondaryLinks: [
+      { label: "Episode page", href: "https://100huntley.com/featured_today/100-huntley-street-march-26-2026/" },
+    ],
+  },
   {
     category: "videos",
     label: "Video",

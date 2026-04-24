@@ -256,6 +256,33 @@ export const writingJsonLd = {
           "@type": "ListItem",
           position: 5,
           item: {
+            "@type": "Episode",
+            name: "Suffering, Identity & Hope: Christian Approaches to Caregiving",
+            author: { "@id": personId },
+            url: "https://www.buzzsprout.com/1863668/episodes/18495716-suffering-identity-hope-christian-approaches-to-caregiving-ep-252",
+            datePublished: "2025-12-03",
+            partOfSeries: { "@type": "PodcastSeries", name: "The Faith Today Podcast" },
+            about: ["Disability theology", "Care ethics", "Christian caregiving", "Medical Assistance in Dying"],
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 6,
+          item: {
+            "@type": "VideoObject",
+            name: "Faith, Art, and Intellectual Disability — Karis on 100 Huntley Street",
+            description:
+              "Keith Dow and Karis Disability Services featured on 100 Huntley Street discussing the Images of God project and how adults with intellectual disabilities experience God through art.",
+            url: "https://youtu.be/PkR8YqimCcg",
+            uploadDate: "2026-03-26",
+            author: { "@id": personId },
+            about: ["Intellectual disability", "Disability theology", "Arts-based research", "Images of God"],
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 7,
+          item: {
             "@type": "Thesis",
             name: "Call, Encounter, and Response: Loving my neighbour with intellectual disabilities",
             author: { "@id": personId },
@@ -271,7 +298,7 @@ export const writingJsonLd = {
         },
         {
           "@type": "ListItem",
-          position: 6,
+          position: 8,
           item: {
             "@type": "Thesis",
             name: "Kierkegaard's Ethic: The Other by Faith",
