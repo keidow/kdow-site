@@ -274,7 +274,9 @@ export const writingJsonLd = {
             description:
               "Keith Dow and Karis Disability Services featured on 100 Huntley Street discussing the Images of God project and how adults with intellectual disabilities experience God through art.",
             url: "https://youtu.be/PkR8YqimCcg",
-            uploadDate: "2026-03-26",
+            embedUrl: "https://www.youtube.com/embed/PkR8YqimCcg",
+            thumbnailUrl: `${siteUrl}/images/thumbnails/video-100-huntley.jpg`,
+            uploadDate: "2026-03-26T00:00:00+00:00",
             author: { "@id": personId },
             about: ["Intellectual disability", "Disability theology", "Arts-based research", "Images of God"],
           },
