@@ -1,7 +1,7 @@
 const siteUrl = "https://keithdow.com";
 const personId = `${siteUrl}/#person`;
 const websiteId = `${siteUrl}/#website`;
-const ogImage = `${siteUrl}/images/keith-headshot.jpeg`;
+const ogImage = `${siteUrl}/images/keith-dow-og-image-watercolour.png`;
 
 // ─── Shared entity stubs ────────────────────────────────────────────────────
 

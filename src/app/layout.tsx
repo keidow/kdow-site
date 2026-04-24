@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     title: "Keith Dow | Theology, Disability, and the Beauty of Human Limits",
     description: defaultDescription,
     url: siteUrl,
-    images: [{ url: "/images/keith-headshot.jpeg", alt: "Keith Dow" }],
+    images: [{ url: "/images/keith-dow-og-image-watercolour.png", alt: "Keith Dow — Theology, Disability, and the Beauty of Human Limits" }],
     locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
     title: "Keith Dow | Theology, Disability, and the Beauty of Human Limits",
     description: defaultDescription,
-    images: ["/images/keith-headshot.jpeg"],
+    images: ["/images/keith-dow-og-image-watercolour.png"],
   },
 };
 
