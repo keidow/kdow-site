@@ -81,7 +81,7 @@ export default function ImagesOfGod() {
                 not only through words but through art, movement, and other expressions that
                 open insight beyond spoken language.
               </p>
-              <blockquote className="border-l-2 border-[var(--accent)] pl-4 text-[var(--foreground)] font-serif italic">
+              <blockquote className="border-l-2 border-[var(--accent-gold)] pl-4 text-[var(--foreground)] font-serif italic">
                 &ldquo;Let us make human beings in our image, to be like us.&rdquo;
                 <footer className="mt-1 text-sm not-italic text-[var(--muted)]">— Genesis 1:26, NLT</footer>
               </blockquote>
@@ -162,7 +162,7 @@ export default function ImagesOfGod() {
                 embodied, lived theology grounded in relational trust rather than abstract doctrine.
               </p>
               <div>
-                <p className="text-xs uppercase tracking-[0.12em] text-[var(--accent)] font-medium mb-3">
+                <p className="text-xs uppercase tracking-[0.12em] text-[var(--accent-gold)] font-medium mb-3">
                   Participants
                 </p>
                 <p className="text-sm leading-relaxed">

@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>
-            <p className="font-serif text-base font-semibold text-[var(--foreground)]">
+            <p className="font-serif text-base font-semibold text-[var(--accent-gold)]">
               Keith Dow
             </p>
             <p className="mt-1 text-sm text-[var(--muted)] max-w-xs">

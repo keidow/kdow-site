@@ -64,7 +64,7 @@ export default function FormedTogether() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
               <Image
-                src="/images/formed-together-cover.png"
+                src="/images/thumbnails/formed-together-cover.png"
                 alt="Formed Together book cover"
                 width={420}
                 height={600}

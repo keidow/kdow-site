@@ -18,13 +18,13 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-sm sticky top-0 z-50">
+    <header className="border-b border-[var(--accent)]/30 bg-[var(--accent)] sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Wordmark */}
           <Link
             href="/"
-            className="font-serif text-lg font-semibold tracking-tight text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
+            className="font-serif text-lg font-semibold tracking-tight text-[var(--background)] hover:text-[var(--accent-gold)] transition-colors"
             aria-label="Keith Dow — home"
           >
             Keith Dow
@@ -40,8 +40,8 @@ export default function Nav() {
                   href={href}
                   className={`text-sm tracking-wide transition-colors ${
                     active
-                      ? "text-[var(--accent)] font-medium"
-                      : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                      ? "text-[var(--accent-gold)] font-medium"
+                      : "text-[var(--background)]/70 hover:text-[var(--background)]"
                   }`}
                   aria-current={active ? "page" : undefined}
                 >
@@ -55,7 +55,7 @@ export default function Nav() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm tracking-wide text-[var(--muted)] hover:text-[var(--foreground)] transition-colors inline-flex items-center gap-1"
+                className="text-sm tracking-wide text-[var(--background)]/70 hover:text-[var(--background)] transition-colors inline-flex items-center gap-1"
               >
                 {label}
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-label="(opens in new tab)">
@@ -67,7 +67,7 @@ export default function Nav() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden flex flex-col gap-1.5 p-2 rounded text-[var(--foreground)]"
+            className="md:hidden flex flex-col gap-1.5 p-2 rounded text-[var(--background)]"
             onClick={() => setMenuOpen((o) => !o)}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
@@ -85,7 +85,7 @@ export default function Nav() {
         <nav
           id="mobile-menu"
           aria-label="Mobile navigation"
-          className="md:hidden border-t border-[var(--border)] bg-[var(--background)]"
+          className="md:hidden border-t border-[var(--accent)]/30 bg-[var(--accent)]"
         >
           <ul className="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-1">
             {internalLinks.map(({ href, label }) => {
@@ -97,8 +97,8 @@ export default function Nav() {
                     onClick={() => setMenuOpen(false)}
                     className={`block py-2.5 text-sm tracking-wide transition-colors ${
                       active
-                        ? "text-[var(--accent)] font-medium"
-                        : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                        ? "text-[var(--accent-gold)] font-medium"
+                        : "text-[var(--background)]/70 hover:text-[var(--background)]"
                     }`}
                     aria-current={active ? "page" : undefined}
                   >
@@ -114,7 +114,7 @@ export default function Nav() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
-                  className="block py-2.5 text-sm tracking-wide text-[var(--muted)] hover:text-[var(--foreground)] transition-colors inline-flex items-center gap-1.5"
+                  className="block py-2.5 text-sm tracking-wide text-[var(--background)]/70 hover:text-[var(--background)] transition-colors inline-flex items-center gap-1.5"
                 >
                   {label}
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-label="(opens in new tab)">

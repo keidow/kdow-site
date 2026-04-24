@@ -69,16 +69,13 @@ export default function Home() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 items-stretch">
           {/* Left: text */}
           <div className="py-16 md:py-24 px-6 lg:px-8 flex flex-col justify-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent)] font-medium mb-6">
-              Keith Dow
-            </p>
             <h1
               id="hero-heading"
               className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.12] text-[var(--foreground)]"
             >
               Theology, Disability,
               <br className="hidden sm:block" /> and the Beauty of{" "}
-              <em className="not-italic text-[var(--accent)]">Human Limits</em>
+              <em className="not-italic text-[var(--accent-gold)]">Human Limits</em>
             </h1>
             <p className="mt-7 text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-[380px]">
               Scholarship, leadership, and public engagement at the intersection
@@ -151,7 +148,7 @@ export default function Home() {
       >
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.15em] text-[var(--accent)] font-medium mb-4">
+            <p className="text-xs uppercase tracking-[0.15em] text-[var(--accent-gold)] font-medium mb-4">
               Book — Baylor University Press, 2021
             </p>
             <h2 className="font-serif text-2xl md:text-3xl font-semibold text-[var(--foreground)] leading-snug mb-5">

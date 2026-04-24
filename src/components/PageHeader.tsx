@@ -28,7 +28,7 @@ export default function PageHeader({
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[3fr_2fr] items-stretch">
           <div className="py-16 md:py-24 px-6 lg:px-8">
             {label && (
-              <p className="text-xs uppercase tracking-[0.15em] text-[var(--accent)] font-medium mb-4">
+              <p className="text-xs uppercase tracking-[0.15em] text-[var(--accent-gold)] font-medium mb-4">
                 {label}
               </p>
             )}
@@ -55,7 +55,7 @@ export default function PageHeader({
         /* Strip layout — wide panoramic artwork below the text */
         <div className="max-w-5xl mx-auto px-6 lg:px-8 pt-16 md:pt-24 pb-10 md:pb-14">
           {label && (
-            <p className="text-xs uppercase tracking-[0.15em] text-[var(--accent)] font-medium mb-4">
+            <p className="text-xs uppercase tracking-[0.15em] text-[var(--accent-gold)] font-medium mb-4">
               {label}
             </p>
           )}
@@ -83,7 +83,7 @@ export default function PageHeader({
         /* No artwork */
         <div className="max-w-5xl mx-auto px-6 lg:px-8 py-16 md:py-24">
           {label && (
-            <p className="text-xs uppercase tracking-[0.15em] text-[var(--accent)] font-medium mb-4">
+            <p className="text-xs uppercase tracking-[0.15em] text-[var(--accent-gold)] font-medium mb-4">
               {label}
             </p>
           )}

@@ -82,7 +82,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
               <Image
-                src="/images/keith-headshot.jpeg"
+                src="/images/headshot-trees-new.png"
                 alt="Keith Dow"
                 width={600}
                 height={720}
@@ -216,7 +216,7 @@ export default function About() {
                 className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-5 border-b border-[var(--border)] last:border-0 gap-1"
               >
                 <div>
-                  <p className="text-xs uppercase tracking-[0.1em] text-[var(--accent)] font-medium mb-1">{c.title}</p>
+                  <p className="text-xs uppercase tracking-[0.1em] text-[var(--accent-gold)] font-medium mb-1">{c.title}</p>
                   <p className="font-serif text-base font-semibold text-[var(--foreground)]">
                     <em>{c.detail}</em>
                   </p>

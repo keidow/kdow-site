@@ -28,7 +28,7 @@ const items: Item[] = [
       "Explores how experiences of caregiving reveal the mystery of shared human limits and the divine image. An invitation to encounter caregiving as a formative practice of love, humility, and courageous belonging — not a set of skills to master.",
     meta: "Baylor University Press · 2021",
     href: "https://www.baylorpress.com/9781481313216/formed-together/",
-    image: "/images/formed-together-cover.png",
+    image: "/images/thumbnails/formed-together-cover.png",
   },
   {
     category: "book",
@@ -38,7 +38,7 @@ const items: Item[] = [
       "Takes an unflinching look at several factors that enabled Jean Vanier to perpetuate harm, and considers what steps must be taken to prevent similar religious abuses in communities serving people with disabilities.",
     meta: "Wipf and Stock · Ed. Stanley Hauerwas & Hans Reinders · 2024",
     href: "https://wipfandstock.com/9781666772302/the-betrayal-of-witness/",
-    image: "/images/betrayal-of-witness-cover.jpeg",
+    image: "/images/thumbnails/betrayal-of-witness-cover.jpeg",
     secondaryLinks: [
       { label: "Faith Today review", href: "https://www.faithtoday.ca/Magazines/2025-Jan-Feb/The-Betrayal-of-Witness-Reflections-on-the-Downfa" },
     ],
@@ -115,7 +115,7 @@ const items: Item[] = [
       "Weekly conversations on the intersections of disability and the Christian faith in Canada and beyond. Co-hosted with Jasmine Duckworth.",
     meta: "Spring 2023",
     href: "https://www.newleafnetwork.ca/disabilitychurchpodcast",
-    image: "/images/disability-canadian-church-podcast.webp",
+    image: "/images/thumbnails/disability-canadian-church-podcast.webp",
   },
   {
     category: "podcasts",
@@ -125,7 +125,7 @@ const items: Item[] = [
       "A three-hour course in nine podcast sessions exploring resilient care practices and combating compassion fatigue in caregiving.",
     meta: "Apple Podcasts · Spotify · SoundCloud",
     href: "https://podcasts.apple.com/ca/podcast/renew-caring-for-you-as-you-care-for-others/id1508594360",
-    image: "/images/renew-podcast.jpg",
+    image: "/images/thumbnails/renew-podcast.jpg",
     secondaryLinks: [
       { label: "Spotify", href: "https://open.spotify.com/show/6k2Akom89p4P6fAfZjbyBn" },
       { label: "SoundCloud", href: "https://soundcloud.com/christianhorizons" },
@@ -141,7 +141,7 @@ const items: Item[] = [
       "Discusses Formed Together and work with Karis Disability Services, covering disability theology, care ethics, and complex ethical questions including Medical Assistance in Dying from a Christian perspective.",
     meta: "The Faith Today Podcast · Ep. 252 · December 2025",
     href: "https://www.buzzsprout.com/1863668/episodes/18495716-suffering-identity-hope-christian-approaches-to-caregiving-ep-252",
-    image: "/images/podcast-faith-today.jpg",
+    image: "/images/thumbnails/podcast-faith-today.jpg",
   },
   {
     category: "podcasts",
@@ -150,7 +150,7 @@ const items: Item[] = [
     description: "A conversation on personhood, human limits, and pastoral formation.",
     meta: "The Personalist Manifesto Podcast · February 2025",
     href: "https://personalistmanifestos.substack.com/p/limits-personhood-formation-and-ministry",
-    image: "/images/podcast-personalist-manifesto.png",
+    image: "/images/thumbnails/podcast-personalist-manifesto.png",
   },
   {
     category: "podcasts",
@@ -159,7 +159,7 @@ const items: Item[] = [
     description: "On what it looks like for churches and communities to genuinely serve alongside people with disabilities.",
     meta: "The Sowers Podcast · September 2024",
     href: "https://creators.spotify.com/pod/show/the-sowers-pod/episodes/46---Keith-Dow-on-Serving-Alongside-People-With-Disabilities-e2u2j28/a-abogv7n",
-    image: "/images/podcast-sowers.jpg",
+    image: "/images/thumbnails/podcast-sowers.jpg",
   },
   {
     category: "podcasts",
@@ -168,7 +168,7 @@ const items: Item[] = [
     description: "A theological conversation on virtue, moral agency, and the ethics of care.",
     meta: "The Two Cities Podcast · April 2023",
     href: "https://www.thetwocities.com/culture/virtue-agency-christian-caregiving-with-dr-keith-dow-podcast/",
-    image: "/images/podcast-two-cities.jpg",
+    image: "/images/thumbnails/podcast-two-cities.jpg",
   },
   {
     category: "podcasts",
@@ -177,7 +177,7 @@ const items: Item[] = [
     description: "On Greek intellectualism in Western theology and what it means for disability and the church.",
     meta: "Faith Today Podcast with Karen Stiller · March 2022",
     href: "https://www.faithtoday.ca/Audio-Video/Podcasts/Toward-accessible-faith-and-flourishing,-with-Keit",
-    image: "/images/podcast-faith-today.jpg",
+    image: "/images/thumbnails/podcast-faith-today.jpg",
   },
   {
     category: "podcasts",
@@ -194,7 +194,7 @@ const items: Item[] = [
     description: "An early conversation on Keith's research and the relationship between theology and disability.",
     meta: "A Podcast of Discipleship · 2018",
     href: "http://www.stephenjbedard.com/2018/08/23/at-the-intersection-of-theology-and-disability/",
-    image: "/images/podcast-bedard.jpg",
+    image: "/images/thumbnails/podcast-bedard.jpg",
   },
 
   // Videos
@@ -206,7 +206,7 @@ const items: Item[] = [
       "Keith Dow and Karis Disability Services were featured on Canada's longest-running daily Christian television program, discussing the Images of God project and how adults with intellectual disabilities experience and express God through art.",
     meta: "100 Huntley Street · March 26, 2026",
     href: "https://youtu.be/PkR8YqimCcg",
-    image: "/images/video-100-huntley.jpg",
+    image: "/images/thumbnails/video-100-huntley.jpg",
     secondaryLinks: [
       { label: "Episode page", href: "https://100huntley.com/featured_today/100-huntley-street-march-26-2026/" },
     ],
@@ -218,7 +218,7 @@ const items: Item[] = [
     description: "A presentation exploring what it means to move from presence to participation in disability ministry.",
     meta: "From Presence to Participation Webinar · March 2022",
     href: "https://youtu.be/T7t_ihSLaPw",
-    image: "/images/video-letting-go.jpg",
+    image: "/images/thumbnails/video-letting-go.jpg",
   },
   {
     category: "videos",
@@ -227,7 +227,7 @@ const items: Item[] = [
     description: "A conversation on Formed Together with theologian Brian Brock.",
     meta: "Institute on Theology and Disability · September 2021",
     href: "https://youtu.be/Gfm7uI6nc8U",
-    image: "/images/video-brian-brock.jpg",
+    image: "/images/thumbnails/video-brian-brock.jpg",
   },
   {
     category: "videos",
@@ -236,7 +236,7 @@ const items: Item[] = [
     description: "A TED-style overview of Keith's doctoral research on loving neighbours with intellectual disabilities.",
     meta: "Institute on Theology and Disability · 2019",
     href: "https://youtu.be/RvQJiVxKyYM?t=541",
-    image: "/images/video-phd-overview.jpg",
+    image: "/images/thumbnails/video-phd-overview.jpg",
   },
   {
     category: "videos",
@@ -245,7 +245,7 @@ const items: Item[] = [
     description: "On what it looks like for local congregations to embody incarnational ministry.",
     meta: "Inclusion Fusion Conference · 2018",
     href: "https://vimeo.com/266402722",
-    image: "/images/video-incarnational.jpg",
+    image: "/images/thumbnails/video-incarnational.jpg",
   },
 
   // Other Writing
@@ -256,7 +256,7 @@ const items: Item[] = [
     description: "Essays and reflections at the intersection of Christian faith and disability.",
     meta: "Author page",
     href: "https://disabilityandfaith.org/author/kdow/",
-    image: "/images/platform-disability-faith.png",
+    image: "/images/thumbnails/platform-disability-faith.png",
   },
   {
     category: "other",
@@ -265,7 +265,7 @@ const items: Item[] = [
     description: "Public essays on faith, culture, and common life in Canada.",
     meta: "Author page",
     href: "https://www.convivium.ca/writers/bio/kdow/",
-    image: "/images/platform-convivium.png",
+    image: "/images/thumbnails/platform-convivium.png",
   },
   {
     category: "other",
@@ -274,7 +274,7 @@ const items: Item[] = [
     description: "Writing on community, inclusion, and social change.",
     meta: "Author page",
     href: "https://www.tamarackcommunity.ca/latest/author/keith-dow",
-    image: "/images/platform-tamarack.png",
+    image: "/images/thumbnails/platform-tamarack.png",
   },
   {
     category: "other",
@@ -305,7 +305,7 @@ const filters: { id: Category; label: string }[] = [
 ];
 
 const accessColors: Record<string, string> = {
-  "Open Access": "text-[var(--accent)] bg-[var(--accent-light)]",
+  "Open Access": "text-[var(--accent-gold)] bg-[var(--accent-gold-light)]",
   "Limited Access": "text-[var(--muted)] bg-[var(--border)]",
 };
 
@@ -395,7 +395,7 @@ export default function WritingAndWork() {
         <ul className="space-y-0">
           {visible.map((item) => {
             const iconLabel = (
-              <span className="shrink-0 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.1em] text-[var(--accent)] font-medium sm:w-32 pt-0.5">
+              <span className="shrink-0 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.1em] text-[var(--accent-gold)] font-medium sm:w-32 pt-0.5">
                 {categoryIcons[item.category]}
                 {item.label}
               </span>

@@ -13,7 +13,7 @@ export default function Card({ label, title, description, meta, href, external }
   const inner = (
     <div className="group border border-[var(--border)] rounded-lg p-6 bg-[var(--background)] hover:border-[var(--accent)] hover:bg-[var(--accent-light)] transition-all duration-200">
       {label && (
-        <p className="text-xs uppercase tracking-[0.12em] text-[var(--accent)] font-medium mb-3">
+        <p className="text-xs uppercase tracking-[0.12em] text-[var(--accent-gold)] font-medium mb-3">
           {label}
         </p>
       )}
