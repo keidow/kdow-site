@@ -24,7 +24,7 @@ export default function Nav() {
           {/* Wordmark */}
           <Link
             href="/"
-            className="font-serif text-lg font-semibold tracking-tight text-[var(--background)] hover:text-[var(--accent-gold)] transition-colors"
+            className="font-serif text-lg font-semibold tracking-tight text-[var(--accent-gold)] hover:text-[var(--background)] transition-colors"
             aria-label="Keith Dow — home"
           >
             Keith Dow
