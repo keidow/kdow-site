@@ -80,7 +80,7 @@ export default function FormedTogether() {
                 About the book
               </h2>
               <p>
-                <em>Formed Together</em> is a culmination of many years&apos; work and personal
+                <em>Formed Together</em>{' '}is a culmination of many years&apos; work and personal
                 experience — beautiful and intermingled with profound delight and heartbreaking loss.
               </p>
               <p>

@@ -179,19 +179,19 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div className="flex flex-col gap-6">
-              <Image
-                src="/images/headshot-trees-new.png"
-                alt="Keith Dow"
-                width={280}
-                height={336}
-                className="rounded-lg w-full h-auto max-w-xs"
-              />
               <h2
                 id="intro-heading"
                 className="font-serif text-2xl md:text-3xl font-semibold text-[var(--foreground)] leading-snug"
               >
                 About Keith
               </h2>
+              <Image
+                src="/images/headshot-trees-new.png"
+                alt="Keith Dow"
+                width={220}
+                height={264}
+                className="rounded-lg w-full h-auto max-w-[220px]"
+              />
             </div>
             <div className="space-y-5 text-[var(--muted)] text-base leading-relaxed">
               <p>
