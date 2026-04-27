@@ -4,9 +4,14 @@
     {
       "name": "keithdow-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 3000,
-      "autoPort": true
+      "runtimeArgs": ["run", "dev", "--", "-p", "3000"],
+      "port": 3000
+    },
+    {
+      "name": "og-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", ".", "-p", "4321"],
+      "port": 4321
     }
   ]
 }

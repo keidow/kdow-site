@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>OG Image — Keith Dow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #faf9f7;
+      --fg:           #1a1a18;
+      --muted:        #6b6b63;
+      --border:       #e5e3de;
+      --green:        #3d5a3e;
+      --green-light:  #f0f4f0;
+      --gold:         #c4973a;
+      --gold-light:   #f7f0e0;
+    }
+
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: var(--bg);
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .frame {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      display: flex;
+    }
+
+    /* ── Left panel ── */
+    .panel-left {
+      width: 420px;
+      flex-shrink: 0;
+      background: var(--green);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 52px 48px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle pattern overlay on left panel */
+    .panel-left .pattern {
+      position: absolute;
+      inset: 0;
+      background-image: url('/public/images/graphic elements/pattern1b.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .wordmark {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel-left .main-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 72px;
+      font-weight: 600;
+      line-height: 1.0;
+      color: #fff;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .credential {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .panel-left .url {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Right panel ── */
+    .panel-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 64px 60px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative circles element */
+    .panel-right .pattern-corner {
+      position: absolute;
+      top: -30px;
+      right: -160px;
+      width: 600px;
+      height: 600px;
+      background-image: url('/public/images/graphic elements/circles1.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top right;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .tagline {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1.18;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+    }
+
+    .tagline em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--border);
+      margin-bottom: 28px;
+    }
+
+    .descriptor {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 420px;
+    }
+
+    /* ── Gold left border on right panel ── */
+    .panel-right::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 52px;
+      bottom: 52px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    /* ── Bottom strip ── */
+    .bottom-strip {
+      position: absolute;
+      bottom: 0;
+      left: 420px;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--gold), transparent 80%);
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+
+    <!-- Left: green panel -->
+    <div class="panel-left">
+      <div class="pattern"></div>
+      <span class="wordmark">Theologian &amp; Author</span>
+      <div class="main-text">
+        <div class="name">Keith<br>Dow</div>
+        <div class="credential">PhD</div>
+      </div>
+      <div class="url">keithdow.com</div>
+    </div>
+
+    <!-- Right: content -->
+    <div class="panel-right">
+      <div class="pattern-corner"></div>
+
+      <div class="label">Theology · Disability · Care</div>
+
+      <h1 class="tagline">
+        The Beauty of<br>
+        <em>Human Limits</em>
+      </h1>
+
+      <div class="divider"></div>
+
+      <p class="descriptor">
+        Scholarship, leadership, and public engagement<br>
+        at the intersection of Christian faith,<br>
+        intellectual disability, and the ethics of care.
+      </p>
+    </div>
+
+    <div class="bottom-strip"></div>
+  </div>
+</body>
+</html>
