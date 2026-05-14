@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -58,6 +59,18 @@ export default function RootLayout({
       className={`${inter.variable} ${lora.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZCTBKD2FFG"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZCTBKD2FFG');
+          `}
+        </Script>
         <Nav />
         <main id="main-content" className="flex-1">
           {children}
